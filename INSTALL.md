@@ -1,113 +1,83 @@
-# Preparation for Training
+# Schulungsvorbereitung VueJS 3 + TypeScript
 
-Please walk through the Preparation Exercise to make sure your environment is ready for the course.
-Please contact us if there is any issue completing this before the training.
+Bitte gehen Sie die Vorbereitungsübung durch, um sicherzustellen, dass Ihre Umgebung für die Schulung bereit ist und kontaktieren Sie mich möglichst schnell ([david.pinezich@apigenio.ch](mailto:david.pinezich@apigenio.ch)), sollten Probleme auftreten. Ich helfe Ihnen gerne. Zeitbedarf: Max. 20min.
 
-## Required software
+## Benötigte Software
 
-You may install the following software and configure it as described, according to your preferences.
+Die folgende Software ist wichtig für die Schulung. Bitte stellen Sie sicher, dass diese installiert ist und funktioniert. Dort wo eine Installation nicht notwendig ist, wurde (Optional) angehängt. Selbstverständlich obliegt die Konfiguration der Software ihnen selbst und kann auch noch während der Schulung optimiert werden.
 
-Disclaimer: Possible conflicts with existing software, configuration or policies can occur - any installation, configuration or other step described in this document is at your discretion.
+Haftungsausschluss: Es kann zu Konflikten mit vorhandener Software, Konfiguration oder Richtlinien kommen - jede Installation, Konfiguration oder jeder andere in diesem Dokument beschriebene Schritt liegt in Ihrem eigenen Ermessen und dessen Ihrer Firma. Unsere Tests weisen jedoch bisher nicht auf Probleme hin.
 
-__If there are any questions or difficulties during the installation don't hesitate to contact us.__
+- Node.js - Long Term Support (LTS) (v18.17.1 / v16.20.2) Version
+    - Download und Installation von: https://nodejs.org/en/
+- Wir empfehlen die Verwendung eines Node-Versionsmanagers, wenn Sie vorhaben, node.js/npm häufiger zu verwenden und zu wechseln:
+    - Für MacOS, Linux, Unix und Windows mit WSL https://github.com/nvm-sh/nvm
+    - Für Windows ohne WSL: https://github.com/coreybutler/nvm-windows
+    - Installieren Sie die LTS Node.js Version mit `nvm install` und `nvm use`
+- npm - Package manager
+    - Wird üblicherweise direkt mit Node.js installiert (npm sollte danach auf der Kommandozeile verfügbar sein).
+- yarn - Package manager (optional) `npm install --global yarn`
+- GIT für version control - https://git-scm.com/
+- @vue/cli
+    - Installiert mittels folgendem Kommando: `npm init vue@latest`
+- npm install -g typescript
+- Option 1: WebStorm oder PhpStorm
+    - Extensions
+        - Vue.js
+        - IntelliVue (Incompatible with newest Version of IntelliJ an update is expected)
+        - Vue Component Creator
+        - Prettier
+        - Optional: Emmet Everywhere
+        - Optional: Run Configuration for TypeScript
+- Option 2: Visual Studio Code - https://code.visualstudio.com/
+    - Das "code" Kommando in der PATH-Variable installieren
+        - Für macOS und Linux cmd+shift+p oder ctrl+shift+p drücken und danach in vscode 'Shell Command: install "code" in PATH' selektieren und akzeptieren.
+        - Unter Windows passiert dies direkt bei der Installation
+    - Extensions:
+        - Volar, https://marketplace.visualstudio.com/items?itemName=vue.volar
+        - ESLint (automatisches Linting von Code): https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint
+        - LiveServer (automatische Anzeige von Webinhalten) https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer
+        - Veraltet: Vetur (rather for Vue2, can be ommitted for Vue3), https://marketplace.visualstudio.com/items?itemName=octref.vetur
+        - Optional: VueDX, https://marketplace.visualstudio.com/items?itemName=znck.vue-language-features
+        - Optional: Vue VSCode Snippets, https://marketplace.visualstudio.com/items?itemName=sdras.vue-vscode-snippets
+        - Optional: Chrome Debugger (öffnet Chrome und erlaubt im Editor “Break Points”)
+        - Optional: vscode-icons (leichtere Trennung von Symbolen für verschiedene Dateitypen mit derselben Erweiterung, z. B. für Tests)
+- Chrome Browser (optional)
+    - Extensions
+        - [Vue.js DevTools](https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd?hl=en)
+- Nur für Windows:
+    - Alternativ der GitBash anstelle von PowerShell / WSL: https://gitforwindows.org/
 
-* Node.js - Long Term Support (v18.16.0 / v16.17.0) Version
-    * Download and Installation from: <https://nodejs.org/en/>
-    * We recommend to use a node version manager if you plan to use node.js/npm more often:
-        * For macOS, Linux, Unix and Windows with WSL https://github.com/nvm-sh/nvm
-        * For Windows without WSL: https://github.com/coreybutler/nvm-windows (not tested by us)
-        * Install the LTS Node.js version using `nvm install` and `nvm use` (check nvm documentation)
-        * (Side note: you can create a .nvmrc to define separate versions for each project)
-* npm - Package manager
-    * Will be installed with Node.js (npm is available on the command line).
-* yarn - Package manager (optional)
-  `npm install --global yarn`
-* GIT for version control - <https://git-scm.com/>
-* @vue/cli
-    * Install by executing the following command: `npm init vue@latest`
-* Option 1: WebStorm or PhpStorm
-    * WebStorm or PhpStorm Extensions
-        * Vue.js
-        * IntelliVue (Incompatible with the newest Version of IntelliJ an update is expected)
-        * Vue Component Creator
-        * Prettier
-        * Optional: Emmet Everywhere
-        * Optional: Run Configuration for TypeScript
-* Option 2: Visual Studio Code - <https://code.visualstudio.com/>
-    * Install "code" command in your PATH variable
-        * For macOS and Linux Press cmd+shift+p or ctrl+shift+p in vscode and then select 'Shell Command: install "code" in PATH'
-        * On Windows this will be done by the installation exe
-    * Visual Studio Code Extensions:
-        * Volar, https://marketplace.visualstudio.com/items?itemName=vue.volar
-        * Vetur (rather for Vue2, can be omitted for Vue3), https://marketplace.visualstudio.com/items?itemName=octref.vetur
-        * Optional: VueDX, https://marketplace.visualstudio.com/items?itemName=znck.vue-language-features
-        * Optional: Vue VSCode Snippets, https://marketplace.visualstudio.com/items?itemName=sdras.vue-vscode-snippets
-        * ESLint (automatic linting of code)
-        * Chrome Debugger (opens chrome and allows in editor breakpoints)
-        * vscode-icons (easier to separate icons for different file types with the same extension, ie. testing)
-* Chrome Browser (optional)
-    * [Vue.js DevTools](https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd?hl=en)
-* On windows:
-    * It's easier to use Git Bash instead of Powershell/CMD.exe: https://gitforwindows.org/
+## Vorbereitungsaufgabe
 
-## `gitlab.letsboot.com` account
+Nachdem Sie die oben beschriebene Software installiert haben, führen Sie bitte diese Übung auf Ihrem Gerät durch, um sicherzustellen, dass Sie ein Vue-Projekt erstellen, bearbeiten und ausführen können:
 
-- https://gitlab.letsboot.com will be used to access the course material.
-- Please fill in the preparation questionnaire as linked in the registration confirmation mail. In the questionnaire you'll be asked which E-Mail address we may use to invite you to your `gitlab.letsboot.com` account.
-- You'll receive an invitation to log in to your `gitlab.letsboot.com` account 1-2 working days before the course.
-
-## Preparation Exercise
-
-After installing the software from above, please walk through this exercise on your device, to make sure you can create, edit and run a Vue project:
-
-1. Install required software as described above according to your preferences
-
-2. Generate a minimal Vue App to test your setup:
-
-3. Open the command line, go to a folder you want to create your projects in (ie. `cd ~/Desktop/`) and run:
-
-    1. Run in your bash/terminal `npm init vue@latest`
-
-    2. Create a new project with name `example`
-
-    3. Select
-    * `Add TypeScript: Yes`,
-    * `Add JSX Support: No`,
-    * `Add Vue Router for Single Page Application development?: Yes`,
-    * `Add Pinia for state management?: Yes`,
-    * `Add Vitest for Unit Testing?: Yes`,
-    * `Add an End-to-End Testing Solution?: No`,
-    * `Add ESLint for code quality?: Yes`,
-    * `Add Prettier for code formatting?: Yes`,
-
-4. Open the vue project with WebStorm, PhpStorm or Visual Studio Code
-
-5. Run `npm install`
-
-6. As a first test, run the default unit tests with the command `npm run test:unit`
-
-7. In the same directory run the command `npm run format` and `npm run dev` to serve the new project on a local development web server
-
-8. Open the new example app in your browser: http://127.0.0.1:5173/ (port may differ)
-
-9. Apply some visible change to the code to see how the app is updated in your browser:
-
-    1. Open the file `src/components/HelloWorld.vue`
-
-    2. Remove all the code in this HelloWorld.vue between the `<template></template>` tag
-
-    3. Add one line `<h1>{{title}}</h1>` in the `<template></template>` block
-
-    4. Change the name of the `defineProps msg` to `defineProps title`
-
-    5. Open HelloWorld.spec.ts and change `msg` to `title`
-
-    6. Open the file `App.vue` and change the value for the msg property handed over to the `<HelloWorld>` component to `title="My first Vue app"` (please also check if you get the auto-suggestion while writing title)
-
-    7. Go back to your browser which should have refreshed http://127.0.0.1:5173/ (port may differ) with the ouptut "My first Vue app"
-
-10. Close your IDE and terminate the `running npm run dev` session
-
-11. Additionally, you can double-check if your vitest still works: `npm run test:unit` (remember we changed it as well :-) )
-
-==> If there is any error during this exercise or something doesn't show as described please contact us.
+1. Installieren Sie die erforderliche Software wie oben beschrieben nach Ihren Wünschen
+2. Erzeugen Sie eine minimale Vue-App, um Ihr Setup zu testen:
+    1. Öffnen Sie die Befehlszeile und gehen Sie zu einem Ordner, in dem Sie Ihre Projekte erstellen möchten (ie. `cd ~/Desktop/`) nun führen Sie folgende Befehle aus:
+    2. Führen Sie in ihrer  GitBash/WSL/Terminal-Konsole folgenden Befehl aus `npm init vue@latest`
+    3. Erstellen Sie ein neues Projekt mit dem Namen `example`
+    4. Selektieren Sie
+    - `Add TypeScript: Yes`,
+    - `Add JSX Support: No`,
+    - `Add Vue Router for Single Page Application development?: Yes`,
+    - `Add Pinia for state management?: Yes`,
+    - `Add Vitest for Unit Testing?: Yes`,
+    - `Add an End-to-End Testing Solution?: No`,
+    - `Add ESLint for code quality?: Yes`,
+    - `Add Prettier for code formatting?: Yes`,
+3. Öffnen Sie nun das erstellte Projekt mit Ihrer gewählten IDE
+4. Verwenden Sie die eingebaute Shell (oder Ihre GitBash/WSL/Terminal-Konsole): `npm install`
+5. Als ersten Test führen Sie die Standard-Unit-Tests mit dem Befehl: `npm run test:unit`
+6. Im gleichen Verzeichnis führen Sie bitte folgendes Kommando aus: `npm run format` und `npm run dev` um das neue Projekt auf einem lokalen Entwicklungs-Webserver bereitzustellen
+7. Öffnen Sie die erstellte App üblicherweise unter: http://127.0.0.1:5173/ (Der Port ist evtl. unterschiedlich)
+8. Wir werden nun einige Änderungen vornehmen, um zu sehen, wie die Anwendung in Ihrem Browser aktualisiert wird:
+    1. Öffnen Sie die Datei: `src/components/HelloWorld.vue`
+    2. Entfernen Sie allen Code innerhalb der `<template></template>` Tags
+    3. Fügen Sie folgende Zeile hinzu `<h1>{{title}}</h1>` innerhalb des `<template></template>` Blocks
+    4. Ändern Sie nun `defineProps msg` in`defineProps title`
+    5. Öffnen Sie nun die Datei HelloWorld.spec.ts und ändern Sie `msg` in`title`
+    6. Öffnen Sie nun die Datei `App.vue` und ändern Sie den Inhalt der msg property welches innerhalb der `<HelloWorld>` Komponente in `title="My first Vue app"` (bitte testen Sie auch, ob die automatischen Vorschläge, IntelliSense funktioniert)
+    7. Laden Sie nun die Webseite unter http://127.0.0.1:5173/ (Der Port ist evtl. unterschiedlich) und kontrollieren Sie die Ausgabe. Zusätzlich kann auch noch `npm run test:unit` ausgeführt werden, um die Tests zu kontrollieren.
+9. Schliessen Sie ihre IDE und beenden Sie die noch laufende `npm run dev` Session
+10. Ende, vielen Dank!
