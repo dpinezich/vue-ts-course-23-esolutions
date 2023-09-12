@@ -14,10 +14,3 @@ import { RouterLink, RouterView } from 'vue-router'
 
   <RouterView />
 </template>
-
-<style>
-.navbar {
-  background-color: lightgreen;
-  padding: 1.2rem;
-}
-</style>
